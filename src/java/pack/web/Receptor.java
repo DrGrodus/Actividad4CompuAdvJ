@@ -77,9 +77,11 @@ public class Receptor extends HttpServlet {
         triangulo tri = new triangulo(base, altura);
         tri.OperarArea();
         double area = tri.getArea();
+        request.setAttribute("area", area);
         
         tri.OperarPerimetro();
         double perimetro = tri.getPerimetro();
+        request.setAttribute("perimetro", perimetro);
     }
 
     /**
