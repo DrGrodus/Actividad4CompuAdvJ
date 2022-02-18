@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package pack.web;
+package com.example.web;
 
-import pack.calculos.triangulo;
+import com.example.calculos.triangulo;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -71,6 +72,7 @@ public class Receptor extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        RequestDispatcher view = request.getRequestDispatcher("Resultado.jsp");
         String base = request.getParameter("campo_Base");
         String altura = request.getParameter("campo_Altura");
         
@@ -82,6 +84,7 @@ public class Receptor extends HttpServlet {
         tri.OperarPerimetro();
         double perimetro = tri.getPerimetro();
         request.setAttribute("perimetro", perimetro);
+        view.forward(request, response);
     }
 
     /**

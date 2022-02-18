@@ -12,12 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <p>
-        <%
-            out.println("Tu triangulo\n"
-                    + "El área es: " + request.getAttribute("area") + " unidades\n" 
-                    + "Y el perímetro es: " + request.getAttribute("perimetro") + " unidades\n");
-        %>
-        </p>
+        <h3><% out.println("Tu triangulo");%></h3>
+        <p><% out.println("El área es: " + request.getAttribute("area") + " unidades");%></p>
+        <p><% out.println("Y el perímetro es: " + request.getAttribute("perimetro") + " unidades");%></p>
     </body>
 </html>
