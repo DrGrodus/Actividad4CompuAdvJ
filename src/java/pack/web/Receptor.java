@@ -4,6 +4,8 @@
  */
 package pack.web;
 
+import pack.calculos.triangulo;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -69,7 +71,15 @@ public class Receptor extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String base = request.getParameter("campo_Base");
+        String altura = request.getParameter("campo_Altura");
+        
+        triangulo tri = new triangulo(base, altura);
+        tri.OperarArea();
+        double area = tri.getArea();
+        
+        tri.OperarPerimetro();
+        double perimetro = tri.getPerimetro();
     }
 
     /**

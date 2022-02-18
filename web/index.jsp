@@ -12,6 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <form action="Receptor.java" method="POST">
+            <p>Calcular el área de un triángulo equilátero</p><br>
+            <label>Base</label>
+            <input id="campo_base" name="campo_Base" type="text" placeholder="Base"><br>
+            <label>Altura</label>
+            <input id="campo_altura" name="campo_Altura" type="text" placeholder="Altura"><br>
+            <input type="submit" value="Calcular">
+        </form>
     </body>
 </html>
